@@ -203,9 +203,20 @@ class Node implements Comparable<Node> {
         this.parent = parent;
     }
 
-    @Override
     public int compareTo(Node other) {
-        return (this.cost + this.heuristic) - (other.cost + other.heuristic);
+        if (this.cost < other.cost) {
+            return -1;
+        } else if (this.cost > other.cost) {
+            return 1;
+        } else {
+            if (this.heuristic < other.heuristic) {
+                return -1;
+            } else if (this.heuristic > other.heuristic) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
     }
 
     @Override

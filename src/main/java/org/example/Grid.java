@@ -11,6 +11,7 @@ public class Grid {
     private int startRow, startCol;
     private int endRow, endCol;
 
+
     public Grid(String filename) {
         loadFromFile(filename);
     }
